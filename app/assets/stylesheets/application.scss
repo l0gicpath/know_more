@@ -1,0 +1,64 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ * require_tree .
+ *=require vendor/spectre.css
+ *=require vendor/spectre-exp.css
+ *=require vendor/spectre-icons.css
+ *=require articles
+ *=require_self
+ */
+
+$brand-color: #0091eb;
+
+a.btn.btn-link {
+  color: black;
+  &:hover {
+    color: $brand-color;
+  }
+
+  &.selected {
+    color: $brand-color;
+  }
+}
+
+a.btn-logo {
+  span.logo {
+    background-color: $brand-color;
+    padding: 0.2rem;
+    text-align: center;
+    color: white;
+  }
+  &:hover {
+    text-decoration: none;
+
+  }
+}
+
+
+.btn.btn-primary {
+  background-color: $brand-color;
+  border-color: $brand-color;
+
+  &:hover {
+    background-color: darken($brand-color, 15%);
+    border-color: darken($brand-color, 15%);
+  }
+}
+
+header {
+  height: 2.5rem;
+}
+
+.empty {
+  background: none;
+}

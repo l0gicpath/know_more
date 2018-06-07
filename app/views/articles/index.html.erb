@@ -1,0 +1,27 @@
+<% if @articles.empty? %>
+    <div class="col-8 col-mx-auto">
+      <div class="empty">
+        <div class="empty-icon">
+          <i class="icon icon-2x icon-message"></i>
+        </div>
+        <p class="empty-title h5">There are no Help Articles to show</p>
+        <p class="text-left empty-subtitle">
+          Creating Help Articles is easy, just click the button below and start a new support article
+          <br/>Things you can do
+          <ul class="text-left">
+            <li>Add formatted text</li>
+            <li>Supports embedded images</li>
+            <li>Link Help articles with questions they answer</li>
+            <li>Link to external articles</li>
+          </ul>
+        </p>
+        <div class="empty-action">
+          <%= link_to "New Article", new_article_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <div class="col-8 col-mx-auto">
+  </div>
+<% end  %>

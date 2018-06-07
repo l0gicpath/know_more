@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>KnowMore</title>
+    <title>Know More - Phrase KB</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,30 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div id="wrapper">
+      <header class="navbar container grid-lg">
+        <section class="navbar-section">
+          <a href="/" class="btn-logo">
+            <span class="logo">
+              KM
+            </span>
+          </a>
+          <%= link_to "Articles", "#", class: "btn btn-link" %>
+          <%= link_to "Questions", "#", class: "btn btn-link"%>
+          <%= link_to "Topics", "#", class: "btn btn-link" %>
+          <%= link_to "Search", "#", class: "btn btn-link"%>
+        </section>
+        <section class="navbar-section">
+          <span>Languages:</span>
+          <%= link_to "English", "#", class: "btn btn-link" %>
+          <%= link_to "German", "#", class: "btn btn-link" %>
+        </section>
+      </header>
+      <div class="container grid-lg">
+        <div class="columns">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
