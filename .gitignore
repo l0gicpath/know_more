@@ -22,5 +22,9 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+# Ignoring spec/example.txt because that will be updated everytime
+# we run tests!
+spec/examples.txt
+
 # Ignore environment specific configuration files
 config/database.yml

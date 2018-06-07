@@ -21,9 +21,7 @@ class ArticlesController < ApplicationController
   end
 
 
-  def edit;end
-
-
+  def edit; end
   def update
     if @article.update(article_params)
       redirect_to @article
@@ -33,8 +31,7 @@ class ArticlesController < ApplicationController
   end
 
 
-  def delete;end
-
+  def delete; end
   def destroy
     if @article.destroy
       flash[:notice] = "Successfully deleted article #{@article.title}"
