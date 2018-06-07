@@ -1,0 +1,19 @@
+<div class="form-group <%= has_errors_for?(article, :title) %>">
+  <%= f.label :title, class: "form-label" %>
+  <%= f.text_field :title, class: "form-input", placeholder: "Article Title" %>
+  <% if has_errors_for?(article, :title) %>
+    <p class="form-input-hint">
+      <%= errors_for(article, :title) %>
+    </p>
+  <% end %>
+</div>
+
+<div class="form-group <%= has_errors_for?(article, :content) %>">
+  <%= f.label :content, class: "form-label" %>
+  <%= f.trix_editor :content %>
+  <% if has_errors_for?(article, :content) %>
+    <p class="form-input-hint">
+      <%= errors_for(article, :content) %>
+    </p>
+  <% end %>
+</div>

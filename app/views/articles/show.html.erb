@@ -2,10 +2,15 @@
   <div class="card">
     <div class="card-header">
       <div class="card-title h5"><%= @article.title %></div>
-      <div class="card-subtitle text-gray"><%= "Topic" %></div>
     </div>
     <div class="card-body">
+      <h4>English Text:</h4>
       <%= raw @article.content %>
+    </div>
+    <hr>
+    <div class="card-body">
+      <h4>German Text:</h4>
+      <%= raw @article.gr_content %>
     </div>
   </div>
 </div>

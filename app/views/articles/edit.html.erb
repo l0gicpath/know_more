@@ -1,7 +1,7 @@
 <div class="col-8 col-mx-auto">
-  <%= form_for @article, html: { class: "form-group" } do |f| %>
+  <%= form_for @article, method: :put, html: { class: "form-group" } do |f| %>
 
-    <%= render partial: "form", locals: {f: f,  article: @article } %>
+    <%= render partial: "form", locals: {f: f, article: @article} %>
     <div class="form-group">
       <%= f.submit "Save", class: "btn btn-primary" %>
       <%= link_to "Cancel", url_for(:back), class: "btn btn-link" %>
