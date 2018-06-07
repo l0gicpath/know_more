@@ -36,10 +36,10 @@ class ArticlesController < ApplicationController
   def delete;end
 
   def destroy
-    if article.destroy
-      flash[:notice] = "Successfully deleted article #{article.title}"
+    if @article.destroy
+      flash[:notice] = "Successfully deleted article #{@article.title}"
     else
-      flash[:error] = "Couldn't delete article #{article.title}, try again!"
+      flash[:error] = "Couldn't delete article #{@article.title}, try again!"
     end
 
     redirect_to articles_path
