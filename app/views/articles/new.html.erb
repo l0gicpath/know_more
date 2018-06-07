@@ -12,7 +12,7 @@
 
     <div class="form-group <%= has_errors_for?(@article, :content) %>">
       <%= f.label :content, class: "form-label" %>
-      <%= f.text_area :content, class: "form-input", rows: 8%>
+      <%= f.trix_editor :content %>
       <% if has_errors_for?(@article, :content) %>
         <p class="form-input-hint">
           <%= errors_for(@article, :content) %>

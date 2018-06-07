@@ -1,0 +1,11 @@
+<% if flash[:notice] %>
+  <div class="toast toast-primary">
+    <button class="btn btn-clear float-right"></button>
+    <%= flash[:notice] %>
+  </div>
+<% elsif flash[:error] %>
+  <div class="toast toast-error">
+    <button class="btn btn-clear float-right"></button>
+    <%= flash[:error] %>
+  </div>
+<% end %>

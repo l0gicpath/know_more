@@ -18,9 +18,9 @@
               KM
             </span>
           </a>
-          <%= link_to "Articles", "#", class: "btn btn-link" %>
+          <%= link_to "Articles", articles_path, class: "btn btn-link" %>
+          <%= link_to "Articles+", new_article_path, class: "btn btn-link" %>
           <%= link_to "Questions", "#", class: "btn btn-link"%>
-          <%= link_to "Topics", "#", class: "btn btn-link" %>
           <%= link_to "Search", "#", class: "btn btn-link"%>
         </section>
         <section class="navbar-section">
@@ -29,11 +29,12 @@
           <%= link_to "German", "#", class: "btn btn-link" %>
         </section>
       </header>
-      <div class="container grid-lg">
+      <main class="container grid-lg">
         <div class="columns">
+          <%= render partial: "shared/flash" %>
           <%= yield %>
         </div>
-      </div>
+      <main>
     </div>
   </body>
 </html>

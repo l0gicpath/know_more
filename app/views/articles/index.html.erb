@@ -23,5 +23,21 @@
   </div>
 <% else %>
   <div class="col-8 col-mx-auto">
+    <% @articles.each do |article| %>
+      <div class="tile tile-centered">
+        <div class="tile-content">
+          <div class="tile-title"><%= article.title %></div>
+          <div class="tile-subtitle text-gray">Last Updated: <%= article.updated_at.strftime("%B %d, %Y") %></div>
+        </div>
+        <div class="tile-action">
+          <a href="<%= edit_article_path(article) %>" class="btn btn-link">
+            <i class="icon icon-edit"></i>
+          </a>
+          <a href="<%= delete_article_path(article) %>" class="btn btn-link">
+            <i class="icon icon-delete"></i>
+          </a>
+        </div>
+      </div>
+    <% end %>
   </div>
 <% end  %>

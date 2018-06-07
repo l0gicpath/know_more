@@ -1,0 +1,20 @@
+<div class="col-8 col-mx-auto">
+  <div class="empty">
+    <div class="empty-icon">
+      <i class="icon icon-2x icon-delete"></i>
+    </div>
+    <p class="empty-title h5">You are about to delete this Article! <%= @article.title %></p>
+    <p class="empty-subtitle">
+      You cannot undo this, are you sure?
+    </p>
+    <%= form_for @article, method: :delete do |f| %>
+      <div class="empty-action">
+        <div class="form-group">
+          <%= f.submit "Yes I'm sure!", class: "btn btn-error" %>
+          <%= link_to "No, Cancel!", url_for(:back), class: "btn btn-link" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+</div>
