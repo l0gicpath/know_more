@@ -28,7 +28,7 @@ a Microsoft Translation Service integration, simple but does the job well.
 
 Currently the default service is set to `:google` however there is no Google implementation as of yet, 
 so in [config/initializers/translations.rb](config/initializers/translations.rb) we are loading the translation services configuration of which
-an example exists [config/translation_services.yml.example] and we are setting the service used to `:microsoft**
+an example exists [config/translation_services.yml.example](config/translation_services.yml.example) and we are setting the service used to `:microsoft`
 
 **Important** `config/translation_services.yml` is expected to be there, otherwise the application will not boot.
 
