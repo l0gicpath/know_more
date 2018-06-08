@@ -15,6 +15,7 @@ module Translator # :nodoc:
     class Microsoft
 
       def initialize(config)
+        raise Translator::Error::MissingConfiguration.new("microsoft", "key config variable is required") unless is_config_valid?(config)
         @config = config
         @host = 'https://api.cognitive.microsofttranslator.com/translate?api-version=3.0'
       end
@@ -46,12 +47,17 @@ module Translator # :nodoc:
         result = response.body.force_encoding("utf-8")
         json = JSON.parse(result)
 
-        response_code = response_code.to_i
+        response_code = response.code.to_i
         if response_code >= 200 && response_code < 300
           json[0]["translations"][0]["text"]
         else
           raise Translator::Error::ServiceError.new("microsoft", json["error"]["message"])
         end
+      end
+
+      private
+      def is_config_valid?(config)
+        !config.nil? && config.has_key?("key")
       end
     end
   end

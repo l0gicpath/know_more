@@ -10,5 +10,6 @@ module Translator
 
     class ServiceError < TranslatorError; end
     class NonExistingService < TranslatorError; end
+    class MissingConfiguration < TranslatorError; end
   end
 end
