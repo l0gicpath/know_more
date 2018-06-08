@@ -32,6 +32,14 @@ an example exists [config/translation_services.yml.example](config/translation_s
 
 **Important** `config/translation_services.yml` is expected to be there, otherwise the application will not boot.
 
+#### Google Integration
+
+Google cloud translation API client is a bit special. It requires an environment variable to be set pointing at a creds json file, which
+a sample of it lives in [config/google-auth.json.example](config/google-auth.json.example). This **must be replaced** with one downloaded from
+Google developers console.
+
+The environment variable part is already handled by the implementation, so all you need is to point at the right file.
+
 ## Features
 
 - Users can list Articles, credit, edit and update them as well as delete them
