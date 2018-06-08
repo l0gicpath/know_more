@@ -29,3 +29,4 @@ spec/examples.txt
 # Ignore environment specific configuration files
 config/database.yml
 config/translation_services.yml
+config/google-auth.json
