@@ -4,7 +4,7 @@ module Translator
       attr_reader :service
       def initialize(service, message = "")
         @service = service
-        super "#{service.capitalize} #{message.capitalize}"
+        super "#{service.capitalize} #{message}"
       end
     end
 

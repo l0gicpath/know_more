@@ -29,7 +29,6 @@ module Translator # :nodoc:
                                                  format: type)
         translation.text
       rescue StandardError => err
-        puts err.inspect
         raise Translator::Error::ServiceError.new("google", err.to_s)
       end
 
