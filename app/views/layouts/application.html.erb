@@ -18,10 +18,17 @@
               KM
             </span>
           </a>
-          <%= link_to "Articles", articles_path, class: "btn btn-link" %>
-          <%= link_to "Articles+", new_article_path, class: "btn btn-link" %>
-          <%= link_to "Questions", "#", class: "btn btn-link"%>
+          <%= active_link_to "Articles", articles_path, class: "btn btn-link", active: :exclusive %>
+          <%= active_link_to "Articles+", new_article_path, class: "btn btn-link", active: :exclusive %>
+          <%= link_to "Questions", "#", class: "btn btn-link" %>
           <%= link_to "Search", "#", class: "btn btn-link"%>
+        </section>
+        <section class="navbar-section">
+          <span>
+            Language:
+          </span>
+          <%= active_link_to "English", articles_path, class: "btn btn-link", active: :exact %>
+          <%= active_link_to "German", articles_path(language: "de"), class: "btn btn-link", active: {language: "de"} %>
         </section>
       </header>
       <main class="container grid-lg">

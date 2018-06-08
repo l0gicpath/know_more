@@ -1,7 +1,13 @@
 class ArticlesController < ApplicationController
   before_action :fetch_article, only: [:show, :edit, :update, :delete, :destroy]
   def index
-    @articles = Article.all
+    if params[:language] == "de"
+      @articles = Article.where(de_content: [nil, ""])
+    else
+      @articles = Article.all
+    end
+
+    @articles&.order(created_at: :desc)
   end
 
   def show;end
