@@ -2,21 +2,37 @@
 
 This is a small Knowledge Base that will contain help articles divided by topics.
 
+
+## Setup
+
+To get started, a few configurations have to be set.
+
+### Database
+
+First is the database, you'll find a database configuration example called [database.yml.example](config/database.yml.example) in the `config`
+directory. Copy it to `database.yml` and modify it to include the database settings needed.
+
+The database used is postgresql, a server should be up and running on your machine before attempting to run this.
+
+Next step is to create the database tables and run migrations:
+
+```shell
+$ bundle exec rails db:create
+$ bundle exec rails db:migrate
+```
+
+### Translation Services
+
+Second thing is the configuration of the translation services. The implementation lives in [lib/translator.rb](lib/translator.rb). This includes
+a Microsoft Translation Service integration, simple but does the job well.
+
+Currently the default service is set to `:google` however there is no Google implementation as of yet, 
+so in [config/initializers/translations.rb](config/initializers/translations.rb) we are loading the translation services configuration of which
+an example exists [config/translation_services.yml.example] and we are setting the service used to `:microsoft**
+
+**Important** `config/translation_services.yml` is expected to be there, otherwise the application will not boot.
+
 ## Features
 
-- Artciles should contain at least a single question and an answer
-- Should be possible to apply CRUD operations on help articles
-- Articles should be translated from English to German automatically using Machine translation
-- Answers can contain HTML
-
-### Implementation
-
-Initially the core concept was to support Article creation along with specific topic tags, then creating
-questions that link to answers, articles in that case.
-
-This still needs more work, but so far the current implementation supports Article creation and translation.
-It doesn't support the following:
-
-- Search
-- Caching
-- Filtering based on language.
+- Users can list Articles, credit, edit and update them as well as delete them
+- Article content can contain HTML formatting elements
