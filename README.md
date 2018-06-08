@@ -26,9 +26,14 @@ $ bundle exec rails db:migrate
 Second thing is the configuration of the translation services. The implementation lives in [lib/translator.rb](lib/translator.rb). This includes
 a Microsoft Translation Service integration, simple but does the job well.
 
-Currently the default service is set to `:google` however there is no Google implementation as of yet, 
-so in [config/initializers/translations.rb](config/initializers/translations.rb) we are loading the translation services configuration of which
-an example exists [config/translation_services.yml.example](config/translation_services.yml.example) and we are setting the service used to `:microsoft`
+#### Current Integrations:
+
+- Google Cloud Translation API
+- Microsoft Translation API V3
+
+Currently the default service is set to `:google`, so in [config/initializers/translations.rb](config/initializers/translations.rb) 
+we are loading the translation services configuration of which an example exists 
+[config/translation_services.yml.example](config/translation_services.yml.example) 
 
 **Important** `config/translation_services.yml` is expected to be there, otherwise the application will not boot.
 
