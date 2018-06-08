@@ -38,6 +38,9 @@ gem 'trix', git: "https://github.com/DRBragg/trix.git"
 # Google cloud translate API
 gem 'google-cloud-translate'
 
+# For links with active states
+gem 'active_link_to'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
