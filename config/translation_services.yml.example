@@ -1,3 +1,6 @@
 development:
   microsoft:
     key: "some-key"
+  google:
+    key_file: "<% Rails.root.join('config', 'google-auth.json') %>"
+    project_id: "Google Platform Project ID"

@@ -3,6 +3,7 @@ require 'uri'
 require 'cgi'
 require 'json'
 require 'securerandom'
+
 module Translator # :nodoc:
   module Services
 
@@ -14,7 +15,6 @@ module Translator # :nodoc:
     class Microsoft
 
       def initialize(config)
-        puts @config
         @config = config
         @host = 'https://api.cognitive.microsofttranslator.com/translate?api-version=3.0'
       end

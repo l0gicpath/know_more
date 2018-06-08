@@ -1,6 +1,7 @@
 require "translator/errors"
 require "translator/service"
 require "translator/services/microsoft"
+require "translator/services/google"
 
 module Translator # :nodoc:
   @default_service = :google
