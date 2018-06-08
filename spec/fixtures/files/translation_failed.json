@@ -1,0 +1,6 @@
+{
+  "error": {
+    "code": "400101",
+    "message": "Authorization failed"
+  }
+}

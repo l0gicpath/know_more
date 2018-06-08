@@ -1,6 +1,6 @@
 require 'webmock/rspec'
 
-WebMock.disable_net_connect!(allow_localhost: true)
+WebMock.disable_net_connect!
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
@@ -17,4 +17,22 @@ RSpec.configure do |config|
   config.disable_monkey_patching!
   config.order = :random
   Kernel.srand config.seed
+end
+
+def stub_failed_microsoft_request
+  WebMock.reset!
+  stub_request(:post, "https://api.cognitive.microsofttranslator.com/translate").
+    with(
+      query: {textType: "html", to: "de", 'api-version': "3.0"}
+    ).
+    to_return(status: 400, body: file_fixture("translation_failed.json").read)
+end
+
+def stub_successful_microsoft_request
+  WebMock.reset!
+  stub_request(:post, "https://api.cognitive.microsofttranslator.com/translate").
+    with(
+      query: {textType: "html", to: "de", 'api-version': "3.0"}
+    ).
+    to_return(status: 200, body: file_fixture("translation_successful.json").read)
 end
